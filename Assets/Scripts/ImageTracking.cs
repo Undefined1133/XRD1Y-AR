@@ -53,9 +53,7 @@ public class PlaceTrackedImages : MonoBehaviour
         {
             if (_instantiatedPrefabs.ContainsKey(trackedImage.referenceImage.name))
             {
-                // Destroy its prefab
                 Destroy(_instantiatedPrefabs[trackedImage.referenceImage.name]);
-                // Also remove the instance from our dictionary
                 _instantiatedPrefabs.Remove(trackedImage.referenceImage.name);
             }
         }

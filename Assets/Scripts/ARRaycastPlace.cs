@@ -14,7 +14,6 @@ public class NewBehaviourScript : MonoBehaviour
     public Camera camera;
 
     private List<ARRaycastHit> hits = new List<ARRaycastHit>();
-    // Update is called once per frame
     void Update()
     {
         Ray ray = camera.ScreenPointToRay(Input.mousePosition);
