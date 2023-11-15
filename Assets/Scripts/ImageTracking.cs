@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using DefaultNamespace;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
@@ -8,12 +9,13 @@ using UnityEngine.XR.ARSubsystems;
 public class PlaceTrackedImages : MonoBehaviour
 {
     private ARTrackedImageManager _trackedImagesManager;
+    private ColorManager _colorManager;
     public GameObject[] ArPrefabs;
-
     private readonly Dictionary<string, GameObject> _instantiatedPrefabs = new Dictionary<string, GameObject>();
 
     void Awake()
     {
+        _colorManager = GetComponent<ColorManager>();
         _trackedImagesManager = GetComponent<ARTrackedImageManager>();
     }
 
@@ -38,6 +40,10 @@ public class PlaceTrackedImages : MonoBehaviour
                 if (string.Compare(curPrefab.name, imageName, StringComparison.OrdinalIgnoreCase) == 0
                     && !_instantiatedPrefabs.ContainsKey(imageName))
                 {
+                    if(imageName.Equals("A")) _colorManager.OnABlockScanned();
+                    if(imageName.Equals("B")) _colorManager.OnBBlockScanned();
+                    if(imageName.Equals("C")) _colorManager.OnCBlockScanned();
+
                     var newPrefab = Instantiate(curPrefab, trackedImage.transform);
                     _instantiatedPrefabs[imageName] = newPrefab;
                 }

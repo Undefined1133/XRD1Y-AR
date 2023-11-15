@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
@@ -8,12 +10,18 @@ public class NewBehaviourScript : MonoBehaviour
 {
     public ARRaycastManager raycastManager;
 
-    public GameObject objectToInstantiate;
+    private GameObject objectToInstantiate;
     public GameObject instantiatedGameObject;
 
     public Camera camera;
 
     private List<ARRaycastHit> hits = new List<ARRaycastHit>();
+
+    private void Start()
+    {
+        objectToInstantiate = MainManager.Instance.originalPrefab;
+    }
+
     void Update()
     {
         Ray ray = camera.ScreenPointToRay(Input.mousePosition);
@@ -27,7 +35,10 @@ public class NewBehaviourScript : MonoBehaviour
                 {
                     instantiatedGameObject = Instantiate(objectToInstantiate, pose.position, pose.rotation);
                 }
-                instantiatedGameObject.transform.position = pose.position;
+                else
+                {
+                    Destroy(instantiatedGameObject);
+                }
             }
         }
     }
