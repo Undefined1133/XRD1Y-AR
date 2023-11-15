@@ -39,16 +39,6 @@ namespace DefaultNamespace
         public GameObject arrowAPrefab;
         public GameObject arrowBPrefab;
         public GameObject arrowCPrefab;
-        
-        public List<GameObject> arrowsFromCToB = new List<GameObject>();
-        public List<GameObject> arrowsFromCToA = new List<GameObject>();
-        public List<GameObject> arrowsFromCToCanteen = new List<GameObject>();
-        public List<GameObject> arrowsFromAToB = new List<GameObject>();
-        public List<GameObject> arrowsFromAToC = new List<GameObject>();
-        public List<GameObject> arrowsFromAToCanteen = new List<GameObject>();
-        public List<GameObject> arrowsFromBToA = new List<GameObject>();
-        public List<GameObject> arrowsFromBToC = new List<GameObject>();
-        public List<GameObject> arrowsFromBToCanteen = new List<GameObject>();
 
         private Dictionary<ArrowType, List<GameObject>> arrowDictionary = new Dictionary<ArrowType, List<GameObject>>();
 
