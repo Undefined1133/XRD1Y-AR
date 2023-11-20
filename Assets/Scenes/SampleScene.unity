@@ -341,7 +341,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &161587208
 RectTransform:
   m_ObjectHideFlags: 0
@@ -767,7 +767,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Bookstore
+          m_StringArgument: BlockC
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &423128898
@@ -1751,7 +1751,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Library
+          m_StringArgument: BlockB
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &674155412
@@ -2529,18 +2529,6 @@ MonoBehaviour:
   arrowFromCToCanteen4: {fileID: 1153358326}
   arrowFromBToCanteen1: {fileID: 1391886764}
   arrowFromBToCanteen2: {fileID: 551724897}
-  arrowAPrefab: {fileID: 121005692}
-  arrowBPrefab: {fileID: 121005693}
-  arrowCPrefab: {fileID: 121005691}
-  arrowsFromCToB: []
-  arrowsFromCToA: []
-  arrowsFromCToCanteen: []
-  arrowsFromAToB: []
-  arrowsFromAToC: []
-  arrowsFromAToCanteen: []
-  arrowsFromBToA: []
-  arrowsFromBToC: []
-  arrowsFromBToCanteen: []
 --- !u!114 &976812892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2587,6 +2575,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   raycastManager: {fileID: 976812889}
+  planeManager: {fileID: 0}
   instantiatedGameObject: {fileID: 0}
   camera: {fileID: 542275368}
 --- !u!4 &1059276942
@@ -2849,7 +2838,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Library
+          m_StringArgument: BlockA
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1236586026

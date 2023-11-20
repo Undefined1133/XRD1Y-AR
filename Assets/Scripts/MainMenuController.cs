@@ -68,14 +68,14 @@ public class MainMenuController : MonoBehaviour
       if (currentDirection.Equals("Canteen"))
       {
           MainManager.Instance.OnToCanteenClicked(currentLocation);
-      }else if (currentDirection.Equals("Block A"))
+      }else if (currentDirection.Equals("BlockA"))
       {
           MainManager.Instance.OnToABlockClicked(currentLocation);
-      }else if (currentDirection.Equals("Block B"))
+      }else if (currentDirection.Equals("BlockB"))
       {
           MainManager.Instance.OnToBBlockClicked(currentLocation);
       }
-      else if (currentDirection.Equals("Block C"))
+      else if (currentDirection.Equals("BlockC"))
       {
           MainManager.Instance.OnToCBlockClicked(currentLocation);
       }

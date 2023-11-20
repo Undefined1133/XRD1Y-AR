@@ -36,9 +36,6 @@ namespace DefaultNamespace
         public GameObject arrowFromCToCanteen4;
         public GameObject arrowFromBToCanteen1;
         public GameObject arrowFromBToCanteen2;
-        public GameObject arrowAPrefab;
-        public GameObject arrowBPrefab;
-        public GameObject arrowCPrefab;
 
         private Dictionary<ArrowType, List<GameObject>> arrowDictionary = new Dictionary<ArrowType, List<GameObject>>();
 
@@ -81,6 +78,7 @@ namespace DefaultNamespace
 
         public void OnToBBlockClicked(CurrentLocations currentLocation)
         {
+            Clear();
             if (currentLocation == CurrentLocations.BlockC)
             {
                 ToggleArrows(ArrowType.CToB);
@@ -93,6 +91,7 @@ namespace DefaultNamespace
 
         public void OnToCBlockClicked(CurrentLocations currentLocation)
         {
+            Clear();
             if (currentLocation == CurrentLocations.BlockB)
             {
                 ToggleArrows(ArrowType.BToC);
@@ -101,11 +100,11 @@ namespace DefaultNamespace
             {
                 ToggleArrows(ArrowType.AToC);
             }
-            // Handle other cases if needed
         }
 
         public void OnToABlockClicked(CurrentLocations currentLocation)
         {
+            Clear();
             if (currentLocation == CurrentLocations.BlockB)
             {
                 ToggleArrows(ArrowType.BToA);
@@ -114,12 +113,12 @@ namespace DefaultNamespace
             {
                 ToggleArrows(ArrowType.CToA);
             }
-            // Handle other cases if needed
         }
         
 
         public void OnToCanteenClicked(CurrentLocations currentLocation)
         {
+            Clear();
             if (currentLocation == CurrentLocations.BlockA)
             {
                 ToggleArrows(ArrowType.AToCanteen);
@@ -137,9 +136,13 @@ namespace DefaultNamespace
 
         public void Clear()
         {
-            if(arrowAPrefab.activeSelf) arrowAPrefab.SetActive(false);
-            if(arrowBPrefab.activeSelf) arrowBPrefab.SetActive(false);
-            if(arrowCPrefab.activeSelf) arrowCPrefab.SetActive(false);
+            foreach (var arrowList in arrowDictionary.Values)
+            {
+                foreach (var arrow in arrowList)
+                {
+                    if (arrow.activeSelf) arrow.SetActive(false);
+                }
+            }
         }
     }
     

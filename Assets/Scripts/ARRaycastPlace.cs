@@ -9,6 +9,7 @@ using UnityEngine.XR.ARSubsystems;
 public class NewBehaviourScript : MonoBehaviour
 {
     public ARRaycastManager raycastManager;
+    public ARPlaneManager planeManager;
 
     private GameObject objectToInstantiate;
     public GameObject instantiatedGameObject;
@@ -34,6 +35,10 @@ public class NewBehaviourScript : MonoBehaviour
                 if (instantiatedGameObject == null)
                 {
                     instantiatedGameObject = Instantiate(objectToInstantiate, pose.position, pose.rotation);
+                    foreach (var plane in planeManager.trackables)
+                    {
+                        plane.gameObject.SetActive(false);
+                    }
                 }
                 else
                 {
